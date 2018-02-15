@@ -5,10 +5,11 @@ import "time"
 
 
 // REDIS WW
-var REDIS_WW_OPTIONS  = &redis.Options{
+var REDIS_OPTIONS  = &redis.Options{
 	Addr: "127.0.0.1:6379",
 	PoolSize: 10000,
 	PoolTimeout: 5 * time.Second,
 	Password: "",
 	DB: 9,
 }
+
