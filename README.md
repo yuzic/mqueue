@@ -1,4 +1,4 @@
-# mqueue
+# rgoq
 Simple message queue on golang
 
 Message Queue based on Redis with implementation command:

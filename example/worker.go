@@ -3,7 +3,7 @@ package main
 import (
 	"../config"
 	"log"
-	"mqueue"
+	"rgoq"
 	"strconv"
 	"time"
 	"./conf"
@@ -18,7 +18,7 @@ import (
 
 func testKeyOne() {
 	log.Println("start worker one key: " + time.Now().String())
-	mTest := mqueue.CreateQueue(config.REDIS_OPTIONS, conf.TEST_KEY)
+	mTest := rgoq.CreateQueue(config.REDIS_OPTIONS, conf.TEST_KEY)
 	for i:=1; i< 100000; i++ {
 		stest := ("test message " +  strconv.Itoa(i))
 		msg := conf.Message{stest, time.Now()}
@@ -34,7 +34,7 @@ func testKeyOne() {
 
 func testKeyTwo() {
 	log.Println("start worker two key: " + time.Now().String())
-	mTest := mqueue.CreateQueue(config.REDIS_OPTIONS, conf.TEST_KEY2)
+	mTest := rgoq.CreateQueue(config.REDIS_OPTIONS, conf.TEST_KEY2)
 	for i:=1; i< 10; i++ {
 		stest := ("test message " +  strconv.Itoa(i))
 		msg := conf.Message{stest, time.Now()}
@@ -51,5 +51,5 @@ func testKeyTwo() {
 
 func main() {
 	testKeyOne()
-	testKeyTwo()
+	//testKeyTwo()
 }

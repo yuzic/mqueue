@@ -1,4 +1,4 @@
-package mqueue
+package rgoq
 
 import (
 	"encoding/json"

@@ -1,11 +1,15 @@
 package main
 
 import (
-	"../config"
-	"log"
-	"mqueue"
-	"mqueue/example/conf"
+	"fmt"
 )
+
+//import (
+//	"../config"
+//	"log"
+//	"rgoq"
+//	"rgoq/example/conf"
+//)
 
 //func b() {
 //	defer fmt.Print(88)
@@ -15,8 +19,23 @@ import (
 //	}
 //}
 
+
+
+func testq() {
+	fmt.Println(2)
+}
+
 func main() {
-	mtest := mqueue.CreateQueue(config.REDIS_OPTIONS, conf.TEST_KEY)
-	log.Println(mtest.Length())
+//	mtest := rgoq.CreateQueue(config.REDIS_OPTIONS, conf.TEST_KEY)
+//	log.Println(mtest.Length())
+	//go testq()
+	//go testq()
+
+	go func () {
+		fmt.Println(33)
+	}()
+
+	//time.Sleep(1 * time.Second)
+
 
 }
