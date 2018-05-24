@@ -10,7 +10,7 @@ import (
 
 //Holds arguments to be passed to service Arith in RPC call
 type Arguments struct {
-	A, B string
+	Message, Created_at string
 }
 
 //Representss service Arith with method Multiply
@@ -33,10 +33,10 @@ func (t *PackageJsonRpc) PullResult(args Arguments, responce *ResponceResultStri
 
 
 func Push(args Arguments, responce *ResponceResultString) error {
-	log.Printf("Multiplying %d with %d\n", args.A, args.B)
+	log.Printf("Multiplying %d with %d\n", args.Message, args.Created_at)
 	// пишим в очередь
 	mTest := rgoq.CreateQueue(config.REDIS_OPTIONS, config.SERVER_KEY)
-	err := mTest.PushString(string( args.A))
+	err := mTest.PushString(string( args.Message))
 	checkError(err)
 	*responce = ResponceResultString("test message responce")
 

@@ -1,42 +1,31 @@
 package main
 
 import (
-	"errors"
 	"net/rpc"
 	"net"
 	"log"
 	"net/rpc/jsonrpc"
+	"./conf"
 )
 
-type Args struct {
-	A, B int
-}
 
-type Quotient struct {
-	Quo, Rem int
-}
+//
+//func Push(args Arguments, responce *ResponceResultString) error {
+//	log.Printf("Multiplying %d with %d\n", args.A, args.B)
+//	// пишим в очередь
+//	mTest := rgoq.CreateQueue(config.REDIS_OPTIONS, config.SERVER_KEY)
+//	err := mTest.PushString(string( args.A))
+//	checkError(err)
+//	*responce = ResponceResultString("test message responce")
+//
+//	return nil
+//}
 
-type Arith int
-
-func (t *Arith) Multiply(args *Args, reply *int) error {
-	*reply = args.A * args.B
-	return nil
-}
-
-func (t *Arith) Divide(args *Args, quo *Quotient) error {
-	if args.B == 0 {
-		return errors.New("divide by zero")
-	}
-	quo.Quo = args.A / args.B
-	quo.Rem = args.A % args.B
-	return nil
-}
 
 
 func main() {
 	//arith instance
-	arith := new(Arith)
-
+	arith := new(conf.PackageJsonRpc)
 	//make listen in 127.0.0.1:4444
 	l, e := net.Listen("tcp", ":1234")
 	if e != nil {
