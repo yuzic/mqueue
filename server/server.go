@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net"
 	"os"
-	"rgoq"
+	"github.com/user/rgoq"
 )
 
 var message = []byte("hello world")

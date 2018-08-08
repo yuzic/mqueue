@@ -3,9 +3,9 @@ package main
 import (
 	"../config"
 	"log"
-	"rgoq"
-	"./conf"
+	"github.com/user/rgoq/example/conf"
 	"time"
+	"github.com/user/rgoq"
 )
 
 

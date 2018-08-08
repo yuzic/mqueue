@@ -13,3 +13,6 @@ var REDIS_OPTIONS  = &redis.Options{
 	DB: 9,
 }
 
+const JSON_RPC_PORT = ":1234"
+
+

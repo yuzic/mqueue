@@ -1,12 +1,12 @@
 package main
 
 import (
-	"../config"
+	"github.com/user/rgoq/config"
 	"log"
-	"rgoq"
 	"strconv"
 	"time"
 	"./conf"
+	"github.com/user/rgoq"
 )
 
 
