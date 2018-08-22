@@ -5,7 +5,7 @@ import (
 	"log"
 	"strconv"
 	"time"
-	"./conf"
+	"github.com/user/rgoq/example/conf"
 	"github.com/user/rgoq"
 )
 
@@ -29,22 +29,6 @@ func testKeyOne() {
 	}
 
 	log.Println("finish worker one_key: " + time.Now().String())
-}
-
-
-func testKeyTwo() {
-	log.Println("start worker two key: " + time.Now().String())
-	mTest := rgoq.CreateQueue(config.REDIS_OPTIONS, conf.TEST_KEY2)
-	for i:=1; i< 10; i++ {
-		stest := ("test message " +  strconv.Itoa(i))
-		msg := conf.Message{stest, time.Now()}
-		err := mTest.Push(msg)
-		if err != nil {
-			panic(err)
-		}
-	}
-
-	log.Println("finish worker two key: " + time.Now().String())
 }
 
 

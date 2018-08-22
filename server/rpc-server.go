@@ -5,12 +5,12 @@ import (
 	"net"
 	"log"
 	"net/rpc/jsonrpc"
-	"github.com/user/rgoq/example/conf"
 	"github.com/user/rgoq/config"
+	"github.com/user/rgoq/packages"
 )
 
 func main() {
-	arith := new(conf.PackageJsonRpc)
+	arith := new(jsonpackage.PackageJsonRpc)
 	l, e := net.Listen("tcp", config.JSON_RPC_PORT)
 	if e != nil {
 		log.Fatal("listen error:", e)

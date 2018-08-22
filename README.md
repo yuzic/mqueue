@@ -11,3 +11,9 @@ LPush https://redis.io/commands/lpush
 ## How to use mqueue
 
 Please see direcory example for use
+
+
+## How to run unit tests
+
+cd tests && go test -v
+

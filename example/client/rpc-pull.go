@@ -1,7 +1,7 @@
 package main
 
 import (
-  "github.com/user/rgoq/example/conf"
+  "github.com/user/rgoq/packages"
  "log"
  "net/rpc/jsonrpc"
 )
@@ -14,12 +14,12 @@ func main() {
 		log.Fatalf("Error in dialing. %s", err)
 	}
 
-	args := &conf.Arguments{
+	args := &jsonpackage.Arguments{
 		Message: "{subscribe:1, validate:true, Russian:'Русский текст'}",
 		Created_at: "12323213",
 	}
 	//this will store returned result
-	var result conf.ResponceResultString
+	var result jsonpackage.ResponceResultString
 	//call remote procedure with args
 	err = client.Call("PackageJsonRpc.Pull", args, &result)
 	if err != nil {

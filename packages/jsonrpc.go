@@ -1,4 +1,4 @@
-package conf
+package jsonpackage
 
 import (
 	"log"
@@ -15,9 +15,6 @@ type Arguments struct {
 
 //Representss service Arith with method Multiply
 type PackageJsonRpc string
-
-
-
 type ResponceResultString string
 
 

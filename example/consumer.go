@@ -1,7 +1,7 @@
 package main
 
 import (
-	"../config"
+	"github.com/user/rgoq/config"
 	"log"
 	"github.com/user/rgoq/example/conf"
 	"time"
